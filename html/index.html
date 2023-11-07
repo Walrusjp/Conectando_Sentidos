@@ -16,12 +16,35 @@
 </div>
 <div id="fondo" class="fondo"></div>
 
-    <div class="container">
+    <div class="container navbarin">
         <a href="#" class="navbar-brand">
             <img src="/img/logoCS.png" width="95" height="95" alt="LOGO" > 
         </a>
+        <a href="acceso.html" id="logout"><p>Cerrar Sesión</p></a>
+        <div class="cuadro-dialogo" id="cuadro-dialogo">
+          <div class="contenido">
+            <p>¿Desea cerrar la sesión?</p>
+            <button id="aceptar">Aceptar</button>
+            <button id="cancelar">Cancelar</button>
+          </div>
+        </div>
       </div>
-    
+      <script>
+        document.getElementById('logout').addEventListener('click', function(e) {
+          e.preventDefault();
+          document.getElementById('cuadro-dialogo').style.display = 'block';
+        });
+
+        document.getElementById('aceptar').addEventListener('click', function() {
+          // Redirigir a la página "acceso.html" al hacer clic en Aceptar
+          window.location.href = "acceso.html";
+        });
+
+        document.getElementById('cancelar').addEventListener('click', function() {
+          // Ocultar el cuadro de diálogo al hacer clic en Cancelar
+          document.getElementById('cuadro-dialogo').style.display = 'none';
+        });
+        </script>
     <table>
         
         <tr>

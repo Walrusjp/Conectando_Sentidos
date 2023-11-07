@@ -32,15 +32,16 @@
             </div>
             <div class="col-md-6 right">
                 
+              <form id="loginForm"></form>
                 <div class="input-box login">
                    
                    <header>Iniciar Sesión</header>
                    <div class="input-field">
-                        <input type="text" class="input" id="email" required="" autocomplete="off">
+                        <input type="text" class="input" id="email" required autocomplete="off">
                         <label for="email">Email</label> 
                     </div> 
                    <div class="input-field">
-                        <input type="password" class="input" id="pass" required="">
+                        <input type="password" class="input" id="pass" required>
                         <label for="pass">Password</label>
                     </div> 
                    <div class="input-field">
@@ -50,10 +51,24 @@
                    <div class="signin">
                     <span>¿Olvidaste tu contraseña? <a href="#">Clic aquí</a></span>
                    </div>
-                </div>  
+                  
+                  
+                </div>
+              </form>
             </div>
         </div>
     </div>
 </div>
+<!--<script>
+  document.getElementById('loginForm').addEventListener('submit', function (e) {
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('pass').value;
+
+  if (email.trim() === '' || password.trim() === '') {
+    e.preventDefault(); // Evitar el envío del formulario si hay campos vacíos
+    alert('Por favor, complete todos los campos.');
+  }
+});
+</script>-->
 </body>
 </html>
