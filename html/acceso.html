@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conectando Sentidos</title>
-    <link rel="shortcut icon" href="/img/logoCS.png" type="image/x-icon">
-    <link rel="stylesheet" href="/css/styleA.css">
+    <link rel="shortcut icon" href="../img/logoCS.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/styleA.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Iniciar Sesión</title>
 </head>
+<!--
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     // Id del boton del form de acceso
@@ -19,40 +20,39 @@
     });
   });
   </script>
+-->
 <body>
   <div class="wrapper">
     <div class="container main">
         <div class="row">
             <div class="col-md-6 side-image">
                 <!-------------      image     ------------->
-                <img src="/img/logoCS.png" alt="Logo" class="logo">
+                <img src="../img/logoCS.png" alt="Logo" class="logo">
                 <div class="text">
                     <p id="frase"><i>"Para aprender no hay barreras"</i></p>
                 </div>
             </div>
             <div class="col-md-6 right">
                 
-              <form id="loginForm"></form>
+              <form id="loginformdos" method="post" action="../php/acceso.php">
                 <div class="input-box login">
                    
                    <header>Iniciar Sesión</header>
                    <div class="input-field">
-                        <input type="text" class="input" id="email" required autocomplete="off">
+                        <input type="text" class="input" id="email" name="email" required autocomplete="off">
                         <label for="email">Email</label> 
                     </div> 
                    <div class="input-field">
-                        <input type="password" class="input" id="pass" required>
+                        <input type="password" class="input" id="pass" name="pass" required>
                         <label for="pass">Password</label>
                     </div> 
+                    <input type="hidden" value="2" name="accion" id="acciondos"> 
                    <div class="input-field">
-                        
                         <input type="submit" class="submit" id="btnEntrar" value="Entrar">
                    </div> 
                    <div class="signin">
-                    <span>¿Olvidaste tu contraseña? <a href="#">Clic aquí</a></span><br>
                     <span>¿No tienes cuenta? <a href="registro.html">Clic aquí</a></span>
                    </div>
-                  
                   
                 </div>
               </form>
