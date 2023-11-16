@@ -2,8 +2,8 @@ function mostrarVentana(contenido) {
   var ventana = document.getElementById("ventana");
   var fondo = document.getElementById("fondo");
   ventana.innerHTML = contenido;
-  ventana.style.display = "block";
-  fondo.style.display = "block";
+  ventana.style.display = "none";
+  fondo.style.display = "none";
 }
 
 function ocultarVentana() {
