@@ -42,12 +42,40 @@ table {
     cursor: default;
   }
 
+  /*Estilos para cuadro de dialogo*/
   #modalEventos{
     background-color: rgba(146, 139, 255, 0.3);
   }
-  .modal-content{
-    background-color: rgba(212, 212, 212, 0.9);
+  .modal-header{
+    background-color: rgba(177, 177, 177, 0.8);
   }
+  .modal-content{
+    background-color: rgba(212, 212, 212, 0.8);
+  }
+  /* Estilos para el formulario dentro del modal */
+#modalEventos input[type="datetime"],
+#modalEventos input[type="text"],
+#modalEventos textarea {
+  width: 90%;
+  padding: 0.5% 2%;
+  margin: 1% 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#modalEventos input[type="datetime"]:focus,
+#modalEventos input[type="text"]:focus,
+#modalEventos textarea:focus,
+#modalEventos input[type="color"]:focus {
+  outline: none;
+  border: 1px solid rgb(39, 49, 192);
+}
+
+#modalEventos textarea {
+  resize: vertical;
+}
+
 
   /* Estilos para el cuadro de diálogo personalizado */
 .cuadro-dialogo {
