@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,132 +9,26 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src=" https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <title>Document</title>
+    <script src="../javaScript/calendar.js"></script>
+    <script src="../javaScript/logout.js"></script>
+    <link rel="shortcut icon" href="../img/logoCS.png" type="image/x-icon">
+    <link href="../css/styleI.css" rel="stylesheet">
+    <title>Inicio</title>
 </head>
 <body>
+  <a href="acceso.html" id="logout"><input type="submit" id="salir" value="Cerrar Sesión"></a>
+  <div class="cuadro-dialogo" id="cuadro-dialogo">
+    <div class="contenido">
+      <p>¿Desea cerrar la sesión?</p>
+      <button id="aceptar">Aceptar</button>
+      <button id="cancelar">Cancelar</button>
+    </div>
+  </div>
 <div class="container">
     <div class="col-md-8 offset-md-2">
       <div id="calendar"></div>
     </div>
 </div>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'timeGridWeek',
-      editable: true,
-      locale: "es",
-      //Selecciona la fecha
-      initialView: 'dayGridMonth',
-      selectable: true,
-      eventDrop:function(info){
-        $('#txtID').val(info.event.id);
-        $('#txtTitulo').val(info.event.title);
-        //Mostrar la informacion del evento
-        $('#txtDescripcion').val(info.event.extendedProps.description);
-        $('#txtColor').val(info.event.backgroundColor);
-        $('#txtFecha').val(info.event.startStr);
-        $('#txtFechados').val(info.event.endStr);
-        RecolectarDatosGUI();
-        enviarInformacion('modificar', NuevoEvento);
-      },
-      headerToolbar: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'dayGridMonth,timeGridWeek,timeGridDay'
-      },
-      dateClick: function(info) {
-        $('#btnAgregarClase').prop("disabled", false);
-        $('#btnModificarClase').prop("disabled", true);
-        $('#btnEliminarClase').prop("disabled", true);
-        limpiarFormulario();
-        $('#txtFecha').val(info.dateStr);
-        $("#modalEventos").modal('toggle');
-      },
-      events: {
-        url: '../php/eventos.php',
-        method: 'POST',
-        extraParams: function () {
-          return {
-            custom_param: 'value'
-          };
-        },
-        failure: function() {
-          alert('Hubo un error al cargar los eventos.');
-        }
-      },
-      eventClick: function(info) {
-        $('#btnAgregarClase').prop("disabled", true);
-        $('#btnModificarClase').prop("disabled", false);
-        $('#btnEliminarClase').prop("disabled", false);
-        $('#tituloEvento').html(info.event.title);
-        //Mostrar la informacion del evento
-        $('#txtDescripcion').val(info.event.extendedProps.description);
-        $('#txtID').val(info.event.id);
-        $('#txtTitulo').val(info.event.title);
-        $('#txtColor').val(info.event.backgroundColor);
-        $('#txtFecha').val(info.event.startStr);
-        $('#txtFechados').val(info.event.endStr);
-        $("#modalEventos").modal('toggle');
-      }
-    });
-    calendar.render();
-
-    var NuevoEvento;
-
-    $('#btnEliminarClase').click(function() {
-      RecolectarDatosGUI();
-      enviarInformacion('eliminar', NuevoEvento);
-    });
-
-    $('#btnModificarClase').click(function() {
-      RecolectarDatosGUI();
-      enviarInformacion('modificar', NuevoEvento);
-    });
-
-    $('#btnAgregarClase').click(function() {
-      RecolectarDatosGUI();
-      enviarInformacion('agregar', NuevoEvento);
-    });
-
-    function RecolectarDatosGUI() {
-      NuevoEvento = {
-        id: $('#txtID').val(),
-        title: $('#txtTitulo').val(),
-        description: $('#txtDescripcion').val(),
-        start: $('#txtFecha').val(),
-        end: $('#txtFechados').val(),
-        color: $('#txtColor').val(),
-      };
-    }
-
-    function enviarInformacion(accion, objEvento) {
-      $.ajax({
-        type: 'POST',
-        url: '../php/eventos.php?accion=' + accion,
-        data: objEvento,
-        success: function(msg) {
-          if (msg) {
-            calendar.refetchEvents(); // Actualiza los eventos en el calendario
-            $("#modalEventos").modal('hide'); // Cierra el modal
-          }
-        },
-        error: function() {
-          alert("Hay un error");
-        }
-      });
-    }
-  });
-function limpiarFormulario(){
-  $('#txtID').val('');
-  $('#txtTitulo').val('');
-  //Mostrar la informacion del evento
-  $('#txtDescripcion').val('');
-  $('#txtColor').val('');
-  $('#txtFecha').val('');
-  $('#txtFechados').val('');
-}
-</script>
 <!-- The Modal -->
 <div class="modal" id="modalEventos">
   <div class="modal-dialog">
@@ -159,7 +53,7 @@ function limpiarFormulario(){
         <button type="button" class="btn btn-success" id="btnAgregarClase">Agregar</button>
         <button type="button" class="btn btn-success" id="btnModificarClase">Modificar</button>
         <button type="button" class="btn btn-success" id="btnEliminarClase">Eliminar</button>
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-danger" id="btnClose" data-bs-dismiss="modal">Cerrar</button>
       </div>
 
     </div>

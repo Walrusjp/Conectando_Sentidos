@@ -58,7 +58,7 @@ switch ($accion) {
                 session_start();
                 $_SESSION['loggedin'] = true;
                 $_SESSION['username'] = $correo;
-                header("Location: ../html/horario.html");
+                header("Location: ../html/acceso.html");
                 exit;
             } else {
                 echo "Error al ejecutar la consulta: " . $stmt->error;
@@ -79,7 +79,7 @@ switch ($accion) {
             $row = $result->fetch_assoc();
             $passwordconf = $row['contraseña'];
             if ($password == $passwordconf) {
-                header("Location: ../html/horario.html");
+                header("Location: ../html/inicio.html");
             } else {
                 header("Location: ../html/acceso.html");
             }

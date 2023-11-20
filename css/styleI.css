@@ -1,0 +1,143 @@
+/* POPPINS FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: linear-gradient(rgb(92, 51, 95), rgb(172, 44, 114));
+}
+a {
+    color: inherit !important;
+    text-decoration: none !important;
+  } 
+
+table {
+    border-collapse:separate;
+    width: 100%;
+  }
+  th, td {
+    border: 1px solid black;
+    background-color: #60b1b1;
+    text-align: center;
+    padding: 20px;
+  }
+  th {
+    background-color: rgba(156, 37, 93, 0.8);
+    color: white;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  td{
+    background-color: rgba(220,141,248, 0.8);
+    cursor: pointer;
+  }
+  td:hover{
+    background-color: rgba(146, 139, 255, 0.8);
+  }
+  .break, .break:hover{
+    background-color: rgba(220,141,248, 0.8);
+    cursor: default;
+  }
+
+  #modalEventos{
+    background-color: rgba(146, 139, 255, 0.3);
+  }
+  .modal-content{
+    background-color: rgba(212, 212, 212, 0.9);
+  }
+
+  /* Estilos para el cuadro de diálogo personalizado */
+.cuadro-dialogo {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+  }
+  
+  .contenido {
+    background: #fff;
+    width: 300px;
+    padding: 20px;
+    margin: 100px auto;
+    border-radius: 5px;
+    text-align: center;
+    background-color: rgba(172, 44, 114, 0.8);
+  }
+  
+  #aceptar, #cancelar {
+    margin: 10px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    background: rgba(156, 37, 93, 0.849);
+    color: white;
+  }
+
+  #salir{
+    position: absolute;
+    left: 85%;
+    top: 4%;
+    padding: .75%;
+    transition: 0.4s;
+    background: rgba(156, 37, 93, 0.849);
+    margin: 5px auto;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    color:rgb(207, 205, 205);
+    border: none;
+    text-align: center;
+  }
+  #btnAgregarClase, #btnModificarClase, #btnEliminarClase{
+    background: rgba(156, 37, 93, 0.849);
+    transition: 0.4s;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    
+  }
+  #btnClose{
+    transition: 0.4s;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  #salir:hover, #btnAgregarClase:hover, #btnModificarClase:hover, #btnEliminarClase:hover{
+    background: rgba(156, 37, 93, 1);
+    color: #fff;
+  }
+
+  .fc-prev-button,
+  .fc-next-button,
+  .fc-today-button,
+  .fc-timeGridDay-button, 
+  .fc-timeGridWeek-button,
+  .fc-dayGridMonth-button{
+    background: rgba(117, 21, 58, 0.8) !important;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2) !important;
+    border: none !important;
+    color:rgb(207, 205, 205) !important;
+    border-radius: 5px !important;
+    transition: 0.4s !important;
+}
+
+  .fc-prev-button:hover,
+  .fc-next-button:hover,
+  .fc-today-button:hover,
+  .fc-timeGridDay-button:hover, 
+  .fc-timeGridWeek-button:hover,
+  .fc-dayGridMonth-button:hover{
+    background: rgba(248, 226, 236, 0.849) !important;
+    color: #000 !important;
+  }
+
+.custom-button-styles {
+    background-color: rgba(156, 37, 93, 0.849) !important;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
