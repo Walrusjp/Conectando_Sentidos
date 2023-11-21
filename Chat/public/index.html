@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Simple</title>
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          height: 100vh;
+          justify-content: center;
+      }
+      #chat-container {
+          width: 80%;
+          max-width: 400px; /* Ajusta según tus necesidades */
+          border: 1px solid #ccc;
+          padding: 10px;
+          max-height: 400px;
+          overflow-y: scroll;
+          margin-left: auto; /* Coloca el chat en el lado derecho */
+          margin-bottom: 20px;
+      }
+      #messageInput {
+          width: 80%;
+          margin: 10px auto;
+          padding: 5px;
+      }
+  </style>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat"></div>
+        <input type="text" id="senderNameInput" placeholder="Tu nombre">
+        <input type="text" id="messageInput" placeholder="Escribe un mensaje...">
+        <button onclick="sendMessage()">Enviar</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        // Escuchar mensajes del servidor
+        socket.on('chat message', (data) => {
+            displayMessage(data.senderName, data.message);
+        });
+
+        // Función para mostrar mensajes en el chat
+        function displayMessage(senderName, message) {
+            const chatDiv = document.getElementById('chat');
+            const messageParagraph = document.createElement('p');
+            messageParagraph.textContent = `${senderName}: ${message}`;
+            chatDiv.appendChild(messageParagraph);
+        }
+
+        // Función para enviar mensajes al servidor
+        function sendMessage() {
+            const senderNameInput = document.getElementById('senderNameInput');
+            const messageInput = document.getElementById('messageInput');
+
+            const senderName = senderNameInput.value;
+            const message = messageInput.value;
+
+            // Verificar que ambos campos estén llenos antes de enviar el mensaje
+            if (senderName && message) {
+                // Enviar mensaje al servidor con información del remitente y el mensaje
+                socket.emit('chat message', { senderName: senderName, message: message });
+
+                // Mostrar el mensaje en el propio chat
+                displayMessage(senderName, message);
+
+                // Limpiar los campos de entrada
+                senderNameInput.value = '';
+                messageInput.value = '';
+            } else {
+                alert('Por favor, ingresa tu nombre y un mensaje antes de enviar.');
+            }
+        }
+    </script>
+</body>
+</html>
+
