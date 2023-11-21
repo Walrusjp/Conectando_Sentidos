@@ -110,7 +110,7 @@ table {
   #salir{
     position: absolute;
     left: 85%;
-    top: 4%;
+    top: 14%;
     padding: .75%;
     transition: 0.4s;
     background: rgba(156, 37, 93, 0.849);
@@ -168,4 +168,7 @@ table {
     color: white;
     border: none;
     border-radius: 5px;
+}
+.fc .fc-toolbar-title {
+  color:white;
 }

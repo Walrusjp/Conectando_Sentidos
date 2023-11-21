@@ -1,0 +1,33 @@
+body{
+    background: linear-gradient(rgb(92, 51, 95), rgb(172, 44, 114));
+    height: 100vh;
+}
+.card{
+    background-color: rgba(242, 210, 253, 0.8);
+}
+
+.offcanvas{
+    background-color: #EFD4F2;
+}
+.offcanvas-body a:hover{
+    color: rgb(177, 42, 192);
+}
+.mla{
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important; 
+}
+img{
+    width: 10% !important;
+}
+.fixed-bottom {
+    bottom: 0;
+    background-color: rgb(177, 42, 192);
+    width: 26.2% !important;
+    height: 10vh;
+  }
+p {
+    margin-top: 2%;
+    margin-left: 2%;
+
+}

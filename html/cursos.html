@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      href="https://www.nerdfonts.com/assets/css/webfont.css"
+      rel="stylesheet"
+    />
+    <link href="../css/cursos.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!--Menú lateral-->
+    <div class="offcanvas offcanvas-start" id="demo">
+      <div class="mla h-100">
+        <div class="offcanvas-header shadow">
+          <img src="../img/logoCS.png" class="" />
+          <h4 class="offcanvas-title">Conectando sentidos</h4>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <a href="inicio.html" class="my-5 nav-link">
+            <p class="h4"><i class="nf nf-oct-calendar"></i> Calendario</p>
+          </a>
+          <a href="cursos.html" class="my-5 nav-link">
+            <p class="h4"><i class="nf nf-md-google_classroom"></i> Cursos</p>
+          </a>
+          <a href="conf.html" class="my-5 nav-link">
+            <p class="h4"><i class="nf nf-seti-config"></i> Configuracion</p>
+          </a>
+          <a href="" class="nav-link fixed-bottom">
+            <p class="h4 text-white mt-4">
+              <i class="nf nf-fa-user p-3"></i> Usuario
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!--Botón del menú lateral-->
+    <div
+      class="container-fluid mt-3 shadow d-flex justify-content-between py-2"
+    >
+      <button
+        class="btn"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#demo"
+      >
+        <i class="nf nf-cod-menu text-white"></i>
+      </button>
+      <div class="text-white">
+        <i class="nf nf-md-google_classroom"></i> Mis cursos
+      </div>
+    </div>
+
+    <!--Botón para añadir curso-->
+    <div class="d-flex flex-row-reverse mt-3">
+      <button
+        class="btn"
+        type="button"
+        data-bs-toggle="modal"
+        data-bs-target="#añadirCurso"
+      >
+        + Añadir
+      </button>
+    </div>
+
+    <!--Cursos-->
+    <div class="container-fluid mt-2">
+      <div class="row">
+        <div class="col-sm-4 p-3">
+          <div class="card">
+            <div class="card-header">Curso 1</div>
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <p class="my-auto">Alumnos:</p>
+                <button
+                  type="button"
+                  class="btn"
+                  data-bs-toggle="modal"
+                  data-bs-target="#alumnos"
+                >
+                  <i class="nf nf-oct-eye"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-footer d-flex justify-content-around">
+              <button
+                class="btn"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#editarCurso"
+              >
+                <i class="nf nf-cod-edit"></i>
+              </button>
+              <button
+                class="btn"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#eliminarCurso"
+              >
+                <i class="nf nf-md-delete_outline"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 p-3">
+          <div class="card">
+            <div class="card-header">Curso 1</div>
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <p class="my-auto">Alumnos:</p>
+                <button
+                  type="button"
+                  class="btn"
+                  data-bs-toggle="modal"
+                  data-bs-target="#alumnos"
+                >
+                  <i class="nf nf-oct-eye"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-footer d-flex justify-content-around">
+              <button
+                class="btn"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#editarCurso"
+              >
+                <i class="nf nf-cod-edit"></i>
+              </button>
+              <button
+                class="btn"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#eliminarCurso"
+              >
+                <i class="nf nf-md-delete_outline"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 p-3">
+          <div class="card">
+            <div class="card-header">Curso 1</div>
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <p class="my-auto">Alumnos:</p>
+                <button
+                  type="button"
+                  class="btn"
+                  data-bs-toggle="modal"
+                  data-bs-target="#alumnos"
+                >
+                  <i class="nf nf-oct-eye"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-footer d-flex justify-content-around">
+              <button
+                class="btn"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#editarCurso"
+              >
+                <i class="nf nf-cod-edit"></i>
+              </button>
+              <button
+                class="btn"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#eliminarCurso"
+              >
+                <i class="nf nf-md-delete_outline"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para visualizar alumnos -->
+    <div class="modal" id="alumnos">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Alumnos inscritos</h4>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body modal-sm">
+            <div class="container">
+              <div class="row d-flex justify-content-around">
+                <div class="col-10 d-flex justify-content-around">
+                  <label class="h4"><i class="nf nf-oct-person_add"></i></label>
+                  <input type="text" class="col-10" />
+                </div>
+                <div class="col-2 d-flex justify-content-end">
+                  <input type="submit" value="Añadir" class="btn" />
+                </div>
+              </div>
+            </div>
+            <p>1.</p>
+            <p>2.</p>
+            <p>3.</p>
+            <p>4.</p>
+            <p>5.</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para añadir cursos -->
+    <div class="modal" id="añadirCurso">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Añadir curso</h4>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body modal-sm">
+            <div class="container">
+              <div class="row">
+                <div class="form-container">
+                  <form>
+                    <div class="form-group">
+                      <label for="nombreMateria">Nombre del curso:</label>
+                      <input
+                        type="text"
+                        class="form-control mt-2"
+                        id="nombreMateria"
+                        placeholder="Ingrese el nombre"
+                      />
+                    </div>
+                    <button type="submit" class="btn btn-block mt-2">
+                      Agregar
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-outline-danger"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para editar curso -->
+    <div class="modal" id="editarCurso">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Editar curso</h4>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body modal-sm">
+            <div class="container">
+              <div class="row">
+                <div class="form-container">
+                  <form>
+                    <div class="form-group">
+                      <label for="nombreMateria">Nombre del curso:</label>
+                      <input
+                        type="text"
+                        class="form-control mt-2"
+                        id="nombreMateria"
+                        value="Nombre del curso"
+                      />
+                    </div>
+                    <button type="submit" class="btn btn-block mt-2">
+                      Cambiar
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-outline-danger"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal para eliminar curso -->
+    <div class="modal" id="eliminarCurso">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Eliminar</h4>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body modal-sm">
+            <div class="container">
+              <div class="row">
+                <div class="form-container">
+                  <form>
+                    <div class="form-group">
+                      <label for="nombreMateria" class="w-100 text-center"
+                        >Esta seguro de eliminar este curso</label
+                      >
+                      <div class="d-flex justify-content-around mt-3">
+                        <input
+                          type="submit"
+                          class="btn btn-outline-success"
+                          id="confEliminar"
+                          value="Si"
+                        />
+                        <button
+                          type="button"
+                          class="btn btn-outline-danger"
+                          data-bs-dismiss="modal"
+                        >
+                          No
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
