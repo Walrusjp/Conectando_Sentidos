@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
       $('#btnUnirseClase').prop("disabled", false);
       $('#tituloEvento').html(info.event.title);
       // Mostrar la información del evento
+      $('#txtTitulo').val(info.event.title);
       $('#txtDescripcion').val(info.event.extendedProps.description);
       $('#txtID').val(info.event.id);
 
