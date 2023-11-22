@@ -101,19 +101,13 @@
           </div>
           <!-- Modal body -->
           <div class="modal-body">
-            <input type="hidden" id="txtID" name="txtID" /><br />
-            Inicio: <br /><input
-              type="time"
-              id="txtFecha"
-              name="txtFecha"
-              value="09:00:00"
-            /><br />
-            Fin: <br /><input
-              type="time"
-              id="txtFechados"
-              name="txtFecha"
-              value="11:00:00"
-            /><br />
+            <input type="hidden" id="txtID" name="txtID" />
+            <input type="hidden" id="txtFecha" name="txtFecha" />
+            <input type="hidden" id="txtFechados" name="txtFecha" />
+            Inicio: <br />
+            <input type="time" id="txtHora" name="txtHora" /><br />
+            Fin: <br />
+            <input type="time" id="txtHorados" name="txtHorados" /><br />
             Titulo: <br /><input
               type="text"
               id="txtTitulo"
@@ -143,8 +137,8 @@
             <button type="button" class="btn btn-success" id="btnAgregarClase">
               Agregar
             </button>
-            <button type="button" class="btn btn-success" id="btnAgregarClase">
-              Unirse
+            <button type="button" class="btn btn-success" id="btnUnirseClase">
+              <a href="reunion.html">Unirse</a>
             </button>
             <button
               type="button"
